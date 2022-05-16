@@ -8,11 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherCardComponent } from './component/weather-card/weather-card.component';
+import { WeatherDetailComponent } from './component/weather-detail/weather-detail.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    WeatherDetailComponent,
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
