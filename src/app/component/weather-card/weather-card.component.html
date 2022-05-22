@@ -1,10 +1,10 @@
-<p>weather-card works!</p>
-
-
-<mat-card class="example-card" *ngIf="weather">
-  <mat-card-title>{{weather.weather[0].id}}</mat-card-title>
-  <mat-card-subtitle>{{weather.weather[0].main}}</mat-card-subtitle>
+<mat-card class="example-card">
+  <mat-card-title>{{city}}</mat-card-title>
+  <img [src]=iconUrl alt="">
+  <mat-card-subtitle></mat-card-subtitle>
   <mat-card-content>
-    <p>weather-card works!</p>
+    <p>現在気温：{{temp}}</p>
+    <p>最高気温：{{maxTemp}}</p>
+    <p>最低気温：{{minTemp}}</p>
   </mat-card-content>
 </mat-card>

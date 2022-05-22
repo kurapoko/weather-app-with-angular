@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../../service/weather.service';
+import { Component,Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-weather-card',
@@ -8,19 +7,30 @@ import { WeatherService } from '../../service/weather.service';
 })
 export class WeatherCardComponent implements OnInit {
 
-  weather:any;
 
-  constructor( public weatherService: WeatherService ) { }
+  iconUrl: string | undefined;
+
+  /** 都市名 */
+  @Input() city?: string;
+  /** 現在気温 */
+  @Input() temp?: string;
+  /** 最高気温 */
+  @Input() maxTemp?: string;
+  /** 最低気温 */
+  @Input() minTemp?: string;
+  /** アイコン */
+  @Input() icon?: string;
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.weatherService.getWhether().subscribe(
-      response => this.weather = response
-    );
-
-    this.weatherService.getCurrentTemp('london');
+    this.getIconUrl();
   }
 
-  ngAfterViewChecked() {
-    // console.log(this.weather$);
+  /**
+   * 天気のアイコンURLを取得する。
+   */
+  getIconUrl() {
+    this.iconUrl = `http://openweathermap.org/img/wn/${this.icon}@2x.png`
   }
 }
