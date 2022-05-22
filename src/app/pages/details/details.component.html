@@ -1,1 +1,18 @@
-<p>{{city}}</p>
+<h2>{{city}}の天気詳細</h2>
+<div *ngIf="currentWeather">
+  <div>現在気温：{{currentWeather.main.temp}}</div>
+  <div>最高気温：{{currentWeather.main.temp_max}}</div>
+  <div>最低気温：{{currentWeather.main.temp_min}}</div>
+</div>
+<table class="table" *ngIf="forecast">
+  <thead>
+    <th>日付</th>
+    <th>予想気温</th>
+  </thead>
+  <tbody >
+    <tr *ngFor="let item of forecast;">
+      <td>{{item.dt_txt}}</td>
+      <td>{{item.main.temp}}</td>
+    </tr>
+  </tbody>
+</table>

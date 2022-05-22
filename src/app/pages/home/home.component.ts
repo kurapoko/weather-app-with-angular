@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor( public weatherService: WeatherService ) { }
 
   ngOnInit(): void {
-    this.weatherService.getWhetherByCityName('london').subscribe((weather) => {
+    this.weatherService.getWhetherByCityName('tokyo').subscribe((weather) => {
       this.weather = weather;
     });
   }
