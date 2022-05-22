@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "weather-app-with-angular": "weather-app-with-angular",
+    "default": "weather-app-with-angular"
+  },
+  "targets": {
+    "weather-app-with-angular": {
+      "hosting": {
+        "weather-app-with-angular": [
+          "weather-app-with-angular"
+        ]
+      }
+    }
+  }
+}
